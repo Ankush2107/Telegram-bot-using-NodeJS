@@ -53,8 +53,11 @@ if (result !== -1) {
 
 const bot = new Telegraf('6800711242:AAG8T5gtM4in_CPSwmQVTQ7bHo5w9kFnq0o');
 
-bot.start((ctx) => ctx.reply('Welcome to the mist bot from Ankush'))
+bot.start((ctx) => ctx.reply('Welcome to the mist bot from Ankush'));
 
-bot.command('binarysearchjs', (ctx) => ctx.reply(binarySearch))
+bot.command('binarysearchjs', (ctx) => ctx.reply(binarySearch));
+bot.command('whomadethis', (ctx) => ctx.reply('Ankush'));
+
+bot.on('sticker', (ctx) => ctx.reply('❤️ '));
 
 bot.launch();
