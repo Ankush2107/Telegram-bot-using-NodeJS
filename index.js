@@ -1,3 +1,4 @@
+const axios = require('axios');
 const { Telegraf } = require('telegraf');
 
 /**
@@ -57,6 +58,11 @@ bot.start((ctx) => ctx.reply('Welcome to the mist bot from Ankush'));
 
 bot.command('binarysearchjs', (ctx) => ctx.reply(binarySearch));
 bot.command('whomadethis', (ctx) => ctx.reply('Ankush'));
+bot.command('arrayManipulation', async (ctx) => {
+    const response = await axios.get('https://raw.githubusercontent.com/Ankush2107/Data-Structure-And-Algorithm/main/Arrays/arrayManipulation.js');
+    console.log(response.data);
+    return ctx.reply(response.data)
+})
 
 bot.on('sticker', (ctx) => ctx.reply('❤️ '));
 
